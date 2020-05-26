@@ -365,16 +365,7 @@ void ExtractMesh(	const PoissonReconLib::Parameters& params,
 		mesh.nextOutOfCorePoint(v);
 		v.point = iXForm * v.point;
 
-		out_mesh.addVertex(v.point.coords);
-		if (sampleData)
-		{
-			//out_mesh.addNormal(v.normal);
-			out_mesh.addColor(v.color);
-		}
-		if (params.density)
-		{
-			out_mesh.addDensity(v.w);
-		}
+		out_mesh.addPoint(v.point.coords, v.normal, v.color);		
 	}
 	
 	for (size_t tidx = 0; tidx < mesh.polygonCount(); ++tidx)

@@ -130,10 +130,7 @@ public:
 	template <typename Real> class IMesh
 	{
 	public:
-		virtual void addVertex(const Real* coords) = 0;
-		virtual void addNormal(const Real* coords) = 0;
-		virtual void addColor(const Real* rgb) = 0;
-		virtual void addDensity(double d) = 0;
+		virtual void addPoint(const Real* coords, const Real* norm, const Real* rgb) = 0;
 		virtual void addTriangle(size_t i1, size_t i2, size_t i3) = 0;
 	};
 
